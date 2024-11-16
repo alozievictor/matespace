@@ -2,10 +2,9 @@ import React from "react";
 import Navbar from "./Navbar";
 import Auth from "./Auth";
 import SVG from "../assets/illustrtion.png";
+import { Link } from "react-router-dom";
 
-
-const Landing = ({isUser}) => {
-
+const Landing = ({ isUser }) => {
   return (
     <div className="w-full h-screen rounded-b-[300px] bg-gradient-to-t from-[#C7E9E9] to-white">
       <Navbar isUser={isUser} />
@@ -29,7 +28,17 @@ const Landing = ({isUser}) => {
               </button>
             </div>
           </div>
-          <div>{isUser ? <img src={SVG} alt="illustration" className="object-cover w-full h-[600px]"/> : <Auth />}</div>
+          <div>
+            {isUser ? (
+              <img
+                src={SVG}
+                alt="illustration"
+                className="object-cover w-full h-[600px]"
+              />
+            ) : (
+              <Auth />
+            )}
+          </div>
         </div>
       </div>
     </div>

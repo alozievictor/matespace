@@ -2,6 +2,7 @@ import React from "react";
 import Landing from "../components/Landing";
 import Footer from "../components/Footer";
 import LandingSections from "../components/LandingSections";
+import Reducer from "../components/Reducer";
 
 const Home = () => {
   return (
