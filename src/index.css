@@ -20,3 +20,17 @@
 }
 
 
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #36A398;
+    border-radius: 8px;
+  }
+}

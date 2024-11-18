@@ -106,12 +106,15 @@ export const Login = () => {
                   name="password"
                 />
               </div>
+
+
               <button
                 class="mt-2 flex w-full items-center justify-center rounded-xl px-4 py-3 text-base font-medium text-white bg-[#36A398]"
                 type="submit"
               >
                 Login
               </button>
+              
             </div>
           </form>
           <div className="flex justify-between items-center">

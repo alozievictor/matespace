@@ -10,6 +10,7 @@ import Match from "./Pages/Match";
 import { UseAppContext } from "./context/context";
 import MateList from "./components/MateCard";
 import Navbar from "./components/Navbar";
+import Profile from "./Pages/Profile";
 
 function ProtectedRoute({ children }) {
   const { User } = UseAppContext();
@@ -40,6 +41,14 @@ function App() {
             element={
               <ProtectedRoute >
                 <MateList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/profile"
+            element={
+              <ProtectedRoute >
+                <Profile />
               </ProtectedRoute>
             }
           />

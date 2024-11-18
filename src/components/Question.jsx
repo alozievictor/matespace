@@ -55,29 +55,29 @@ const Question = () => {
 
   return (
     <React.Fragment>
-      <div className="w-full lg:w-[50%] mx-auto ">
-        <div className="max-w-2xl mx-auto p-8 bg-white drop-shadow rounded ">
-          <h2 className="text-xl font-bold mb-4">
+      <div className="w-full lg:w-[70%] mx-auto ">
+        <div className="max-w-3xl mx-auto p-8 ">
+          <h2 className="text-lg text-gray-500 font-medium mb-4">
             Question {currentQuestion + 1} / {questions.length}
           </h2>
-          <p className="mb-6 text-[17px] ">
+          <p className="mb-6 text-[25px] text-black font-semibold ">
             {questions[currentQuestion]?.text}
           </p>
-          <div className="grid gap-3">
+          <div className="grid gap-2">
             {questions[currentQuestion]?.options.map((option, index) => (
               <label
                 key={index}
-                className={`block mb-2 p-2 rounded cursor-pointer ${
+                className={`px-2 py-3 mt-3 rounded cursor-pointer flex items-center text-[17px] ${
                   userAnswers[currentQuestion] === option
-                    ? "bg-[#C7E9E9] text-black"
-                    : "bg-gray-100"
+                    ? "bg-[#C7E9E9] text-black font-semibold"
+                    : "bg-gray-50"
                 }`}
               >
                 <input
                   type="radio"
                   name={`question-${currentQuestion}`}
                   value={option}
-                  className="mr-2 w-4 h-4 text-[#C7E9E9]"
+                  className="mr-2 w-5 h-5 text-[#C7E9E9] bg-[#36A398]"
                   checked={userAnswers[currentQuestion] === option}
                   onChange={() => handleOptionSelect(option)}
                 />
@@ -87,33 +87,34 @@ const Question = () => {
           </div>
         </div>
 
-        <div className="flex justify-end max-w-2xl mx-auto mt-7 drop-shadow-sm bg-white border rounded-md p-6">
-          <div className="flex justify-between w-full lg:w-3/6">
+        <div className="flex max-w-3xl mx-auto mt-7 rounded-md p-6">
+          <div className={` ${currentQuestion === 0 ? "justify-end " : "justify-between"}  flex  w-full`}>
             <button
               type="button"
-              className="px-10 py-2.5 border border-[#36A398] drop-shadow-sm text-[#36A398] font-medium text-base rounded-md cursor-pointer"
+              className={` ${
+                currentQuestion === 0 ? "hidden" : "block"
+              } px-10 py-2.5 border border-[#36A398] drop-shadow-sm text-[#36A398] font-semibold text-base rounded-md cursor-pointer`}
               disabled={currentQuestion === 0}
               onClick={handlePrevious}
             >
               Previous
             </button>
-            {currentQuestion < questions.length - 1 ? (
-              <button
-                type="button"
-                className="px-10 py-2.5 bg-[#36A398] drop-shadow-sm text-white font-medium text-base rounded-md cursor-pointer"
-                onClick={handleNext}
-              >
-                Next
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="px-10 py-2.5 bg-green-600 drop-shadow-sm text-white font-medium text-base rounded-md cursor-pointer"
-                onClick={handleSubmit}
-              >
-                Submit
-              </button>
-            )}
+
+            <button
+              type="button"
+              className={`${
+                currentQuestion < questions.length - 1
+                  ? "bg-[#36A398] "
+                  : "bg-green-600"
+              } px-10 py-2.5  drop-shadow-sm text-white font-semibold text-base rounded-md cursor-pointer`}
+              onClick={
+                currentQuestion < questions.length - 1
+                  ? handleNext
+                  : handleSubmit
+              }
+            >
+               {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
+            </button>
           </div>
         </div>
       </div>

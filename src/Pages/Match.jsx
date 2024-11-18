@@ -29,16 +29,16 @@ const Match = () => {
 
       <div className="w-full lg:w-[80%] mx-auto py-32">
         {!question && !isLoading ? (
-          <div className="max-w-2xl mx-auto rounded-md drop-shadow md:p-5 mt-5 bg-white border grid gap-3">
-            <h2 className="text-[21px] text-black font-semibold text-center py-5">
+          <div className="max-w-3xl mx-auto rounded-md md:p-5 mt-5 bg-white grid gap-3">
+            <h2 className="text-2xl text-black font-semibold text-center py-5">
               Discover Your Ideal Match
             </h2>
-            <p className="text-[17px] text-gray-800 text-center">
+            <p className="text-lg font-medium text-gray-600 text-center">
               To ensure we connect you with the most compatible match, we kindly
               ask you to share some insights into your lifestyle, interests, and
               preferences.
             </p>
-            <div className="flex justify-center items-center mt-5 w-full">
+            <div className="flex justify-center items-center mt-7 w-full">
               <button
                 onClick={() => HandleQuestion()}
                 className="py-3 text-center w-36 font-semibold text-base border cursor-pointer rounded-md text-white bg-[#36A398]"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaRegUser } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -100,7 +100,7 @@ const Navbar = () => {
     >
       <div
         className={`w-full  top-0 ${
-          scrolling ? "h-[10vh] md:w-[80%] mx-auto pt-2" : "h-[9vh] md:w-[83%] mx-auto"
+          scrolling ? "h-[10vh] md:w-[80%] mx-auto" : "h-[10vh] md:w-[80%] mx-auto"
         }`}
       >
         <div className="w-full mx-auto px-2 flex justify-between items-center">
@@ -139,10 +139,20 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={MatchNavigate}
-                className={`p-2.5 border font-semibold text-base cursor-pointer lg:w-28 rounded-md text-white bg-[#36A398]`}
+                className={`py-2.5 px-5 border font-semibold text-base cursor-pointer rounded-md text-white bg-[#36A398]`}
               >
                 Find Mate
               </button>
+
+            
+              <Link to="/user/profile"
+                className={`${!User ? "hidden" : "block"} p-3 font-semibold text-base cursor-pointer rounded-full drop-shadow-md border bg-slate-100 flex justify-center items-center`}
+                type="button"
+              >
+               <FaRegUser size={20} color="black" />
+              </Link>
+
+              
           </div>
 
           <div className="md:hidden mr-4 pt-5" onClick={handleClick}>

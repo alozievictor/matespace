@@ -20,11 +20,11 @@ const Footer = () => {
                 class="bg-transparent text-base font-normal text-white placeholder:text-gray-500 focus-within:outline-0"
                 placeholder="Your email here..."
               />
-              <button class="py-3 px-7 hidden min-[470px]:block rounded-xl bg-[#36A398] text-base font-semibold text-white shadow-sm shadow-transparent transition-all duration-500 focus-within:outline-0 hover:bg-violet-700 focus-within:bg-violet-700 ">
+              <button class="py-3 px-7 hidden min-[470px]:block rounded-md bg-[#36A398] text-base font-semibold text-white shadow-sm shadow-transparent transition-all duration-500 focus-within:outline-0">
                 Submit
               </button>
             </div>
-            <button class="py-3 px-7 min-[470px]:hidden rounded-full bg-[#36A398] text-base font-semibold text-white shadow-sm shadow-transparent transition-all duration-500 focus-within:outline-0 hover:bg-violet-700 focus-within:bg-violet-700 ">
+            <button class="py-3 px-7 min-[470px]:hidden rounded-full bg-[#36A398] text-base font-semibold text-white shadow-sm shadow-transparent transition-all duration-500 focus-within:outline-0">
               Submit
             </button>
           </div>
@@ -62,7 +62,7 @@ const Footer = () => {
                   href="javascript:;"
                   class="text-lg font-normal text-gray-400 transition-all duration-300 hover:text-[#36A398] focus-within:outline-0 focus-within:text-[#36A398]"
                 >
-                  Pro Version
+                  Profile
                 </a>
               </li>
             </ul>
