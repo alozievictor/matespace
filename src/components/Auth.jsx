@@ -1,4 +1,7 @@
 import React from "react";
+import { UseAppContext } from "../context/context";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const [showTab, setShowTab] = React.useState({
@@ -74,6 +77,18 @@ const Auth = () => {
 export default Auth;
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const { User, setUser } = UseAppContext();
+  const HandleLogin = () => {
+    setUser(true);
+    if (!User) {
+      toast.error("Please login in");
+      return;
+    }
+    toast.success("Login Successful");
+    navigate("/admin/dashboard");
+  };
+
   return (
     <div class="mx-auto flex w-full flex-col justify-center pt-0">
       <div class="my-auto mb-auto flex flex-col">
@@ -107,14 +122,13 @@ export const Login = () => {
                 />
               </div>
 
-
               <button
                 class="mt-2 flex w-full items-center justify-center rounded-xl px-4 py-3 text-base font-medium text-white bg-[#36A398]"
                 type="submit"
+                onClick={HandleLogin}
               >
                 Login
               </button>
-              
             </div>
           </form>
           <div className="flex justify-between items-center">

@@ -17,7 +17,6 @@ const Navbar = () => {
       toast.success("Welcome!!");
       navigate("/match/me");
     }
-
   }
 
   const [nav, setNav] = useState(false);
