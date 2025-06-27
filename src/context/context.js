@@ -1,10 +1,24 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect } from "react";
 
 export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-  const [User, setUser] = React.useState(false);
-  const value = { User, setUser };
+  const [User, setUser] = React.useState(() => {
+    const storedUser = localStorage.getItem("user");
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  useEffect(() => {
+    if (User) {
+      localStorage.setItem("user", JSON.stringify(User));
+    } else {
+      localStorage.removeItem("user");
+    }
+  }, [User]);
+
+  const value = { User, setUser, isModalOpen, setIsModalOpen };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

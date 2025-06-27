@@ -1,72 +1,95 @@
 export const questions = [
   {
     id: 1,
-    text: "What is your ideal bedtime and wake-up time?",
-    options: ["Early to bed, early to rise", "Night owl", "Flexible"],
+    text: "What is your ideal daily routine?",
+    options: [
+      "Early riser, structured schedule",
+      "Flexible, go with the flow",
+      "Night owl, active in the evenings",
+    ],
   },
   {
     id: 2,
-    text: "How would you describe your cleanliness level?",
-    options: ["Very tidy", "Moderately clean", "Messy"],
+    text: "How do you prefer to handle household chores?",
+    options: [
+      "Shared responsibilities",
+      "Each person handles their own",
+      "Hire a cleaning service",
+    ],
   },
   {
     id: 3,
-    text: "What’s your preferred environment for noise levels?",
-    options: ["Quiet and peaceful", "Moderate noise", "Lively and social"],
+    text: "What is your preferred level of social interaction at home?",
+    options: [
+      "Minimal, I value my privacy",
+      "Occasional hangouts",
+      "Frequent gatherings and socializing",
+    ],
   },
   {
     id: 4,
-    text: "Do you smoke, and how do you feel about living with a smoker?",
+    text: "How do you feel about pets in the home?",
     options: [
-      "I smoke",
-      "I don’t mind if my roommate smokes",
-      "I prefer a smoke-free home",
+      "I have pets and love them",
+      "I’m okay with pets",
+      "I prefer a pet-free home",
     ],
   },
   {
     id: 5,
-    text: "How often do you expect to have guests over?",
-    options: ["Rarely", "Occasionally", "Frequently"],
+    text: "What is your approach to managing shared expenses?",
+    options: [
+      "Split everything equally",
+      "Pay for what you use",
+      "Flexible, depends on the situation",
+    ],
   },
   {
     id: 6,
-    text: "How do you feel about sharing household items like kitchen utensils and groceries?",
-    options: ["Happy to share", "Prefer keeping things separate", "Flexible"],
+    text: "What kind of environment do you prefer for studying or working?",
+    options: [
+      "Quiet and focused",
+      "Background noise is fine",
+      "Lively and collaborative",
+    ],
   },
   {
     id: 7,
-    text: "What are your work or study habits like?",
-    options: ["I work from home", "I have a 9-5 job", "My schedule varies"],
+    text: "How do you handle conflicts or disagreements?",
+    options: [
+      "Direct and open communication",
+      "Take time to cool off before discussing",
+      "Avoid confrontation altogether",
+    ],
   },
   {
     id: 8,
-    text: "How would you describe your socializing habits at home?",
+    text: "What is your ideal temperature setting at home?",
     options: [
-      "Introverted, need alone time",
-      "Balanced, enjoy occasional hangouts",
-      "Extroverted, love socializing",
+      "Cool and breezy",
+      "Moderate and comfortable",
+      "Warm and cozy",
     ],
   },
   {
     id: 9,
-    text: "What is your preferred approach to handling conflicts?",
+    text: "How do you feel about sharing personal items like kitchenware or appliances?",
     options: [
-      "Direct and open communication",
-      "Take time to cool off first",
-      "Avoid conflict",
+      "Happy to share",
+      "Prefer to keep things separate",
+      "Flexible, depends on the item",
     ],
   },
   {
     id: 10,
-    text: "Do you have any dietary restrictions or preferences that a roommate should know about?",
+    text: "What is your preferred way to spend weekends?",
     options: [
-      "None",
-      "Vegetarian or vegan",
-      "Other (e.g., food allergies or specific diets",
+      "Relaxing at home",
+      "Exploring and going out",
+      "Hosting friends or family",
     ],
   },
 ];
-
 
 export const mates = [
     {
@@ -202,4 +225,4 @@ export const mates = [
       image: "https://via.placeholder.com/150/FFD700/000000?text=Charlie",
     },
   ];
-  
+

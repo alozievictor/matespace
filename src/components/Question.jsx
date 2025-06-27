@@ -88,7 +88,11 @@ const Question = () => {
         </div>
 
         <div className="flex max-w-3xl mx-auto mt-7 rounded-md p-6">
-          <div className={` ${currentQuestion === 0 ? "justify-end " : "justify-between"}  flex  w-full`}>
+          <div
+            className={` ${
+              currentQuestion === 0 ? "justify-end " : "justify-between"
+            }  flex  w-full`}
+          >
             <button
               type="button"
               className={` ${
@@ -113,7 +117,7 @@ const Question = () => {
                   : handleSubmit
               }
             >
-               {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
+              {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
             </button>
           </div>
         </div>

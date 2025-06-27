@@ -45,15 +45,11 @@ const Landing = () => {
             </div>
           </div>
           <div>
-            {User ? (
-              <img
-                src={SVG}
-                alt="illustration"
-                className="object-cover w-full h-[600px]"
-              />
-            ) : (
-              <Auth />
-            )}
+            <img
+              src={SVG}
+              alt="illustration"
+              className="object-cover w-full h-[600px]"
+            />
           </div>
         </div>
       </div>

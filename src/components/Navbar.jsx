@@ -5,19 +5,23 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UseAppContext } from "../context/context";
 
-
 const Navbar = () => {
-  const {User} = UseAppContext();
+  const { User, setUser } = UseAppContext();
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    setUser(null); // Clear user state
+    toast.success("Logged out successfully");
+    navigate("/login"); // Redirect to login screen
+  };
+
   const MatchNavigate = () => {
-    if(!User) {
+    if (!User) {
       toast.error("You have to sign in!!");
-    }else {
-      toast.success("Welcome!!");
+    } else {
       navigate("/match/me");
     }
-  }
+  };
 
   const [nav, setNav] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -45,7 +49,6 @@ const Navbar = () => {
   const links = [
     { to: "/about", label: "About" },
     { to: "/service", label: "Services" },
-    { to: "/destination", label: "Client" },
     { to: "/contact", label: "Contact us" },
   ];
 
@@ -87,8 +90,6 @@ const Navbar = () => {
     };
   }, [currentUrl]);
 
- 
-
   return (
     <header
       className={`fixed top-0 z-50 drop-shadow-sm  ${
@@ -99,20 +100,28 @@ const Navbar = () => {
     >
       <div
         className={`w-full  top-0 ${
-          scrolling ? "h-[10vh] md:w-[80%] mx-auto" : "h-[10vh] md:w-[80%] mx-auto"
+          scrolling
+            ? "h-[10vh] md:w-[80%] mx-auto"
+            : "h-[10vh] md:w-[80%] mx-auto"
         }`}
       >
         <div className="w-full mx-auto px-2 flex justify-between items-center">
           {windowWidth > 768 ? (
             <Link to="/" className="flex items-center text-black md:pt-3.5">
               <h2 className="ml-2 text-xl font-medium ">
-                Mate<span className="text-white pr-4 pb-2 pt-1 rounded-sm bg-[#36A398] ml-1">Space</span>
+                Mate
+                <span className="text-white pr-4 pb-2 pt-1 rounded-sm bg-[#36A398] ml-1">
+                  Space
+                </span>
               </h2>
             </Link>
           ) : (
             <Link to="/" className="pt-1 md:pt-0">
               <h2 className="ml-2 text-xl md:mt-2 font-medium ">
-                Mate<span className="text-white pr-4 rounded-full bg-[#36A398] ml-1">Space</span>
+                Mate
+                <span className="text-white pr-4 rounded-full bg-[#36A398] ml-1">
+                  Space
+                </span>
               </h2>
             </Link>
           )}
@@ -134,24 +143,34 @@ const Navbar = () => {
             </div>
           )}
 
-          <div className="hidden md:flex mt-2.5 items-center space-x-4 sm:hidden">  
-              <button
-                type="button"
-                onClick={MatchNavigate}
-                className={`py-2.5 px-5 border font-semibold text-base cursor-pointer rounded-md text-white bg-[#36A398]`}
-              >
-                Find Mate
-              </button>
+          <div className="hidden md:flex mt-2.5 items-center space-x-4 sm:hidden">
+            <button
+              type="button"
+              onClick={MatchNavigate}
+              className={`py-2.5 px-5 border font-semibold text-base cursor-pointer rounded-md text-white bg-[#36A398]`}
+            >
+              Find Mate
+            </button>
 
-            
-              <Link to="/user/profile"
-                className={`${!User ? "hidden" : "block"} p-3 font-semibold text-base cursor-pointer rounded-full drop-shadow-md border bg-slate-100 flex justify-center items-center`}
-                type="button"
-              >
-               <FaRegUser size={20} color="black" />
-              </Link>
+            <button
+              type="button"
+              onClick={() => navigate("/auth")}
+              className={`${
+                User ? "hidden" : "block"
+              } py-2.5 px-5 font-semibold text-base cursor-pointer rounded-md text-[#36A398] border border-[#36A398]`}
+            >
+              Log in
+            </button>
 
-              
+            <Link
+              to="/user/profile"
+              className={`${
+                !User ? "hidden" : "block"
+              } p-3 font-semibold text-base cursor-pointer rounded-full drop-shadow-md border bg-slate-100 flex justify-center items-center`}
+              type="button"
+            >
+              <FaRegUser size={20} color="black" />
+            </Link>
           </div>
 
           <div className="md:hidden mr-4 pt-5" onClick={handleClick}>
