@@ -172,7 +172,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Mission Section */}
         <div className="relative py-20">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
